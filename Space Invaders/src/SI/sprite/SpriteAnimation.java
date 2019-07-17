@@ -81,16 +81,16 @@ public class SpriteAnimation {
 	
 	private void playAnimation()
 	{
-		if(timer.timerEvent(animationSpeed) && currentSprite !=sprites.size()-1 && !isDestroyAnimation())
+		if(timer.isTimerReady(animationSpeed) && currentSprite !=sprites.size()-1 && !isDestroyAnimation())
 		{
 			play = false;
 			currentSprite = 0;
 		}
 
-		else if(timer.timerEvent(animationSpeed) && currentSprite == sprites.size()-1 && isDestroyAnimation() )
+		else if(timer.isTimerReady(animationSpeed) && currentSprite == sprites.size()-1 && isDestroyAnimation() )
 			sprites = null;
 		
-		else if(timer.timerEvent(animationSpeed) && currentSprite !=sprites.size()-1)
+		else if(timer.isTimerReady(animationSpeed) && currentSprite !=sprites.size()-1)
 			currentSprite++;
 	}
 	

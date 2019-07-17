@@ -7,11 +7,13 @@ import SI.state.SuperStateMachine;
 
 public class GameScreen implements SuperStateMachine{
 
-	private Player player;
+	private BasicBlocks bb;
+	private Player player;	
 	
 	public GameScreen() {
-		player = new Player(150, 150, 50, 50);
-	}
+		player = new Player(640, 620, 60, 60, bb);
+		bb = new BasicBlocks();
+		}
 	
 	@Override
 	public void update(double delta) {
@@ -21,6 +23,7 @@ public class GameScreen implements SuperStateMachine{
 	@Override
 	public void draw(Graphics2D g) {
 		player.draw(g);
+		bb.draw(g);
 	}
 
 	@Override

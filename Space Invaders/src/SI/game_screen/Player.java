@@ -10,6 +10,8 @@ import java.net.URL;
 
 import javax.imageio.ImageIO;
 
+import SI.display.Display;
+
 
 public class Player implements KeyListener{
 		
@@ -17,11 +19,15 @@ public class Player implements KeyListener{
 	private Rectangle rect;
 	private double xPos, yPos, startXPos, startYPos;
 	private int width, height;
+	private final double speed = 8.0d;
+	private BasicBlocks blocks;
 	
 	private boolean left = false, right = false, shoot = false;
 	
 	
-	public Player(double xPos, double yPos, int width, int height){
+	public PlayerLaser playerLaser;
+	
+	public Player(double xPos, double yPos, int width, int height, BasicBlocks blocks){
 		this.xPos = xPos;
 		this.yPos = yPos;
 		this.width = width;
@@ -34,24 +40,59 @@ public class Player implements KeyListener{
 			pSprite = ImageIO.read(url);
 		}catch(IOException e){};
 		
+		this.blocks = blocks;
+		playerLaser = new PlayerLaser();
+		
 	}
 	
 	public void draw(Graphics2D g){
 		g.drawImage(pSprite,(int) xPos,(int) yPos, width, height, null);
-
+		playerLaser.draw(g);
 	}
 	
 	public void update(double delta){
+		if(right && !left && xPos < Display.WIDTH - width +10)
+		{
+			xPos += speed * delta;
+			rect.x = (int) xPos;
+		}
+		
+		if(!right && left && xPos >10)
+		{
+			xPos -= speed * delta;
+			rect.x = (int) xPos;
+		}
 
+		playerLaser.update(delta, blocks);
+		
+		if(shoot)
+		{
+			playerLaser.shootLaser(xPos, yPos, 5, 5);
+		}
 	}
 	
 	@Override
 	public void keyPressed(KeyEvent e) {
-
+		int key = e.getKeyCode();
+		if(key == KeyEvent.VK_D || key == KeyEvent.VK_RIGHT)
+				right = true;
+		else if(key == KeyEvent.VK_A || key == KeyEvent.VK_LEFT)
+				left = true;
+		
+		if(key == KeyEvent.VK_SPACE)
+			shoot = true;
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
+		int key = e.getKeyCode();
+		if(key == KeyEvent.VK_D || key == KeyEvent.VK_RIGHT)
+			right = false;
+		else if(key == KeyEvent.VK_A || key == KeyEvent.VK_LEFT)
+			left = false;
+		
+		if(key == KeyEvent.VK_SPACE)
+			shoot = false;
 
 	}
 
