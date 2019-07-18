@@ -58,7 +58,6 @@ public class EnemyTypeBasic implements EnemyType {
 			return false;
 		if(enemySprite.isSpriteAnimDestroyed())
 			return true;
-		
 		return false;
 	}
 
