@@ -26,6 +26,7 @@ public class GameScreen implements SuperStateMachine{
 	public void update(double delta) {
 		player.update(delta);
 		level.update(delta, blocks);
+		
 	}
 
 	@Override
