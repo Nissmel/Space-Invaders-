@@ -106,8 +106,6 @@ public class Display extends Canvas implements Runnable{
 			try {
 				Thread.sleep((lastLoopTime - System.nanoTime() + OPTIMAL_TIME)/1000000);
 			}catch(Exception e) {};
-			
-			System.out.println(FPS);
 		}
 }
 

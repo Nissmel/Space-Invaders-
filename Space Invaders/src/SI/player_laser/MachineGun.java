@@ -29,16 +29,16 @@ public class MachineGun extends PlayerLaserType{
 		if(bullet == null)
 			return;
 		
-		g.setColor(Color.GREEN);
+		g.setColor(Color.WHITE);
 		g.fill(bullet);
 	}
 
 	@Override
 	public void update(double delta, BasicBlocks blocks) {
 		if(bullet == null)
-			return;		
+			return;
 		
-		this.setyPos(getyPos() - (delta + speed));
+		this.setyPos(getyPos() - (delta * speed));
 		bullet.y = (int) this.getyPos();
 		wallCollide(blocks);
 		isOutofBounds();

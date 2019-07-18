@@ -19,7 +19,7 @@ public class Player implements KeyListener{
 	private Rectangle rect;
 	private double xPos, yPos, startXPos, startYPos;
 	private int width, height;
-	private final double speed = 8.0d;
+	private final double speed = 6.0d;
 	private BasicBlocks blocks;
 	
 	private boolean left = false, right = false, shoot = false;
@@ -67,7 +67,7 @@ public class Player implements KeyListener{
 		
 		if(shoot)
 		{
-			playerLaser.shootLaser(xPos, yPos, 5, 5);
+			playerLaser.shootLaser(xPos, yPos, 2, 4);
 		}
 	}
 	

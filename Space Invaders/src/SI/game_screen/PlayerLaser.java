@@ -35,6 +35,7 @@ public class PlayerLaser {
 	
 	public void shootLaser(double xPos, double yPos, int width, int height)
 	{
-		laser.add(new MachineGun(xPos + 22,yPos + 15, width, height));
+		if(timer.timerEvent(250) && laser.size() < 3)
+			laser.add(new MachineGun(xPos + 23,yPos , width, height));
 	}
 }
