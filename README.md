@@ -14,6 +14,6 @@ Game contain implementaion of:
 
 
 
-[I'm an inline-style link](https://nissmel.github.io/)
+### [See my page!](https://nissmel.github.io/)
 
 ![alt text](https://github.com/Nissmel/Space-Invaders-/blob/master/Space%20Invaders/SI.png)
