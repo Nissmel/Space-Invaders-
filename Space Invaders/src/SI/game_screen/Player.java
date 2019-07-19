@@ -11,13 +11,14 @@ import java.net.URL;
 import javax.imageio.ImageIO;
 
 import SI.display.Display;
+import SI.sounds.PlaySound;
 
 
 public class Player implements KeyListener{
 		
 	private BufferedImage pSprite;
 	private Rectangle rect;
-	private double xPos, yPos, startXPos, startYPos;
+	private double xPos, yPos;
 	private int width, height;
 	private final double speed = 6.0d;
 	private BasicBlocks blocks;
@@ -80,8 +81,15 @@ public class Player implements KeyListener{
 				left = true;
 		
 		if(key == KeyEvent.VK_SPACE)
-			shoot = true;
-	}
+			{
+				try {
+					PlaySound.playSound("src/SI/sounds_clips/shoot.wav");
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
+				shoot = true;
+			}
+		}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
@@ -89,7 +97,7 @@ public class Player implements KeyListener{
 		if(key == KeyEvent.VK_D || key == KeyEvent.VK_RIGHT)
 			right = false;
 		else if(key == KeyEvent.VK_A || key == KeyEvent.VK_LEFT)
-			left = false;
+			left = false;		
 		
 		if(key == KeyEvent.VK_SPACE)
 			shoot = false;

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
+import SI.sounds.PlaySound;
 import SI.timer.Timer;
 
 public class SpriteAnimation {
@@ -174,6 +175,11 @@ public class SpriteAnimation {
 
 	public void setDestroyAnimation(boolean destroyAnimation) {
 		this.destroyAnimation = destroyAnimation;
+		try {
+			PlaySound.playSound("src/SI/sounds_clips/explosion.wav");
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
 	}
 
 	public int getWidth() {

@@ -87,7 +87,6 @@ public class EnemyTypeBasic implements EnemyType {
 
 	@Override
 	public boolean isOutOfBounds() {
-		System.out.println(rect.x);
 		if(rect.x == 0 && rect.x< Display.WIDTH - rect.width)
 			return true;
 		if(rect.x > 1230 && rect.x< Display.WIDTH - rect.width)

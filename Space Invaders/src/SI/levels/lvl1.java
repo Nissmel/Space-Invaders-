@@ -7,6 +7,7 @@ import SI.Enemy_types.EnemyType;
 import SI.Enemy_types.EnemyTypeBasic;
 import SI.game_screen.BasicBlocks;
 import SI.game_screen.Player;
+import SI.sounds.PlaySound;
 
 public class lvl1 implements SuperLvl{
 	
@@ -17,6 +18,12 @@ public class lvl1 implements SuperLvl{
 	public lvl1(Player player)
 	{
 		this.player = player;
+		
+		try {
+			PlaySound.playSound("src/SI/sounds_clips/Space Invaders.wav");
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
 		
 		for(int y=0;y<5;y++)
 			for(int x=0;x<10;x++)
