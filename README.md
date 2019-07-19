@@ -11,4 +11,9 @@ Game contain implementaion of:
 - enemy move: wall bounce increase spped by 1.15, changes direction and lower Sprites position
 - player score (80 points for one enemy destroyed)
 
+
+
+
+![alt text](www.nissmel.github.io)
+
 ![alt text](https://github.com/Nissmel/Space-Invaders-/blob/master/Space%20Invaders/SI.png)
