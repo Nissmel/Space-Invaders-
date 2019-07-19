@@ -6,9 +6,10 @@ Game contain implementation of:
 - aliens (Sprites) and player ship
 - enemy destroys with animation
 - destroyable green shields/blocks
-- shooting and moving player ship ('A/arrow_left' to move left, 'D/arrow_right' to move right, 'space' to shoot   
+- shooting and moving player ship (*A/arrow_left* to move left, *D/arrow_right* to move right, *space* to shoot   
 - sounds (background music, shoot sound, enemy destroy sound)
-- enemy move with animation: wall bounce increase speed by 1.15, changes direction and lower Sprites position- player score (80 points for one enemy destroyed)
+- enemy move with animation: wall bounce increase speed by *1.15*, changes direction and lower Sprites position
+- player score (80 points for one enemy destroyed)
 
 
 
