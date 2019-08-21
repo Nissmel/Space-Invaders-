@@ -11,7 +11,7 @@ Game contain implementation of:
 - enemy move with animation: wall bounce increase speed by *1.15*, changes direction and lower Sprites position
 - player score (80 points for one enemy destroyed)
 
-  
+    
 
 ### [See my page!](https://nissmel.github.io/)
 
