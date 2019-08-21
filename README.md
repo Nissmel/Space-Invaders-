@@ -12,7 +12,7 @@ Game contain implementation of:
 - player score (80 points for one enemy destroyed)
 
     
-
+  
 ### [See my page!](https://nissmel.github.io/)
 
 ![photo](https://github.com/Nissmel/Space-Invaders-/blob/master/Space%20Invaders/SI.png)
